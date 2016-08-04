@@ -1,10 +1,14 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
+//import logo from './logo.svg';
 import './base.css';
 
 class CommentForm extends Component {
-  getInitialState() {
-    return {author: '', text: ''};
+  constructor() {
+    super();
+    this.state = {author: '', text: ''};
+    this.handleAuthorChange = this.handleAuthorChange.bind(this);
+    this.handleTextChange = this.handleTextChange.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   handleAuthorChange(e) {

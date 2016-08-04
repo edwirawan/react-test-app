@@ -1,14 +1,9 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
+//import logo from './logo.svg';
 import './base.css';
 import CommentForm from './CommentForm'
 import CommentList from './CommentList'
 
-
-let dataVar = [
-  {id: 1, author: "Pete Hunt", text: "This is one comment"},
-  {id: 2, author: "Jordan Walke", text: "This is *another* comment"}
-];
 
 class CommentBox extends Component {
 
@@ -26,8 +21,14 @@ class CommentBox extends Component {
     });
   }*/
 
-  getInitialState() {
+  /*getInitialState() {
     return {data: dataVar};
+  }*/
+
+  constructor(props) {
+    super(props);
+    this.state = {data:props.data};
+    this.handleCommentSubmit = this.handleCommentSubmit.bind(this);
   }
 
   /*componentDidMount() {
@@ -37,12 +38,13 @@ class CommentBox extends Component {
 
   handleCommentSubmit(comment) {
     let newState = this.state;
-    let newId = this.state["data"].length;
+    let newId = this.state.data.length + 1;
     let newEntry = comment;
-    newEntry["id"] = newId;
-    newState.push(newEntry);
-
-    this.setState({data:newState});
+    newEntry.id = newId;
+    newState.data.push(newEntry);
+    //console.log(newEntry);
+    //console.log(newState);
+    this.setState(newState);
     /*$.ajax({
       url: this.props.url,
       dataType: 'json',

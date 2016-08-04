@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Remarkable from 'remarkable'
-import logo from './logo.svg';
+//import logo from './logo.svg';
 import './base.css';
 
 class Comment extends Component {
