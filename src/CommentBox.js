@@ -43,7 +43,8 @@ class CommentBox extends Component {
     newEntry.id = newId;
     //newState.data.push(newEntry); //ANTIPATTERN: this will mutate this.state.
     //this.setState(newState);
-    this.setState({data : this.state.data.concat([newEntry])}); //This is safe; concat doesn't modify original list
+    //this.setState({data : this.state.data.concat([newEntry])}); //This is safe; concat doesn't modify original list
+    this.setState({data : [...this.state.data,newEntry]});
     //Might be best to use immutable.js for state
 
     /*$.ajax({
