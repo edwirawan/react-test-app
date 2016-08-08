@@ -10,6 +10,6 @@ let dataVar = [
 ];
 
 ReactDOM.render(
-  <CommentBox data={dataVar}/>,
+  <CommentBox obsState={new ObservableState()}/>,
   document.getElementById('root')
 );
