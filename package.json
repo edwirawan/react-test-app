@@ -57,13 +57,5 @@
   },
   "eslintConfig": {
     "extends": "./config/eslint.js"
-  },
-  "babel": {
-    "presets": [
-      "es2015",
-      "react",
-      "stage-1"
-    ],
-    "plugins": ["transform-decorators-legacy"]
   }
 }

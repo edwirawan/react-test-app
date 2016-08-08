@@ -1,8 +1,7 @@
-import {observable} from 'mobx';
+import {observable,computed} from 'mobx';
 
 class ObservableState {
   @observable data = [];
-  currID = 0;
 
   @computed get currID() {
     return this.data.length;
